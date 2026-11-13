@@ -1,107 +1,83 @@
-* {
-  box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&display=swap');
+
+* { box-sizing: border-box; }
 
 :root {
   color-scheme: dark;
-  font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
-  background: #090909;
-  color: #b5b5b5;
+  font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  background: #090707;
+  color: #d4cdca;
 }
 
-html,
-body {
-  width: 100%;
-  min-height: 100%;
-  margin: 0;
-}
+html, body { min-height: 100%; margin: 0; }
 
 body {
   min-height: 100vh;
   display: grid;
   place-items: center;
   overflow: hidden;
-  background: radial-gradient(ellipse at center, #101010 0%, #090909 58%, #040404 100%);
-  animation: screen-flicker 7s infinite;
+  background:
+    radial-gradient(ellipse at 49% 52%, #211011 0%, #110a0a 36%, #090707 73%),
+    #090707;
 }
 
-.message {
-  width: min(92vw, 1000px);
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .18;
+  background-image: repeating-linear-gradient(0deg, transparent 0 3px, #000 4px);
+}
+
+.scene {
+  width: min(900px, 92vw);
   display: flex;
-  flex-direction: column;
   align-items: center;
-  text-align: center;
-  transform: translateY(-1vh);
+  justify-content: center;
+  gap: clamp(24px, 6vw, 78px);
+  transform: translateY(-2vh);
 }
 
-.eye {
-  width: clamp(90px, 13vw, 150px);
-  margin-bottom: clamp(18px, 3vh, 30px);
-  overflow: visible;
-  filter: drop-shadow(0 0 8px #5552);
-  animation: blink 6s infinite;
-}
+.art { width: clamp(150px, 24vw, 260px); flex: 0 0 auto; }
+.art svg { display: block; width: 100%; filter: drop-shadow(0 12px 32px #6e111033); }
+.body { fill: #222124; stroke: #393337; stroke-width: 2; }
+.overall-seam { fill: none; stroke: #51484a; stroke-width: 2; opacity: .72; }
+.neck { fill: #514545; }
+.face { fill: #aaa49a; stroke: #d0c2b7; stroke-opacity: .28; stroke-width: 2; }
+.mask-mark { fill: #8e2629; opacity: .9; }
+.mask-holes { fill: #292323; opacity: .9; }
+.mask-strap { fill: none; stroke: #554b48; stroke-width: 7; stroke-linecap: round; }
+.eye { fill: #171111; }
+.nose { fill: none; stroke: #756d67; stroke-width: 2; stroke-linecap: round; opacity: .65; }
+.mouth { fill: none; stroke: #6b625d; stroke-width: 2; stroke-linecap: round; opacity: .65; }
+.shade { fill: #352c2d; opacity: .36; }
 
-.eye-outline {
-  fill: none;
-  stroke: #686868;
-  stroke-width: 3;
-  stroke-linecap: round;
+.copy { min-width: 0; }
+.eyebrow, .copy p {
+  color: #8c4a4b;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .32em;
 }
-
-.iris {
-  fill: #292929;
-  stroke: #686868;
-  stroke-width: 2;
-}
-
-.pupil {
-  fill: #080808;
-}
-
-.glint {
-  fill: #c5c5c5;
-  opacity: .7;
-}
-
+.eyebrow { display: block; margin-bottom: 19px; }
 h1 {
   margin: 0;
-  color: #a5a5a5;
-  font-size: clamp(2rem, 6vw, 5rem);
+  color: #ded6d1;
+  font-size: clamp(3.1rem, 8vw, 6.6rem);
   font-weight: 800;
-  letter-spacing: .045em;
-  line-height: .95;
-  white-space: nowrap;
-  text-shadow: 0 0 14px #aaa1;
+  letter-spacing: .015em;
+  line-height: .82;
+  text-shadow: 0 0 28px #8b17172b;
 }
+h1 em { color: #a52c32; font-style: normal; }
+.rule { display: block; width: 52px; height: 2px; margin: 25px 0 16px; background: #772126; }
+.copy p { margin: 0; font-size: .68rem; letter-spacing: .25em; color: #665152; }
 
-p {
-  margin: 22px 0 0;
-  color: #626262;
-  font-size: clamp(.75rem, 1.5vw, 1rem);
-  letter-spacing: .18em;
-}
-
-@keyframes blink {
-  0%, 45%, 49%, 100% { transform: scaleY(1); }
-  47% { transform: scaleY(.06); }
-}
-
-@keyframes screen-flicker {
-  0%, 94%, 96%, 100% { opacity: 1; }
-  95% { opacity: .88; }
-  97% { opacity: .95; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation: none !important;
-  }
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: clamp(1.8rem, 8vw, 2.5rem);
-    letter-spacing: .015em;
-  }
+@media (max-width: 560px) {
+  .scene { flex-direction: column; gap: 12px; text-align: center; transform: none; }
+  .art { width: clamp(130px, 40vw, 190px); }
+  .eyebrow { margin-bottom: 14px; }
+  h1 { font-size: clamp(3.2rem, 13vw, 5rem); }
+  .rule { margin: 18px auto 13px; }
 }
