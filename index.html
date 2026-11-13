@@ -1,23 +1,49 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#111111">
-  <title>Вас увидели</title>
+  <meta name="theme-color" content="#090707">
+  <title>All I Feel Is Hatred</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="message" aria-label="Вас увидели">
-    <svg class="eye" viewBox="0 0 240 120" role="img" aria-label="Глаз">
-      <path class="eye-outline" d="M12 60 Q120 -10 228 60 Q120 130 12 60Z" />
-      <circle class="iris" cx="120" cy="60" r="29" />
-      <circle class="pupil" cx="120" cy="60" r="11" />
-      <circle class="glint" cx="130" cy="49" r="3" />
-    </svg>
-
-    <h1>ВАС УВИДЕЛИ</h1>
-    <p>by @SCRE4АM</p>
+  <main class="scene">
+    <div class="art" role="img" aria-label="Minimalist portrait of Jason Voorhees with a hockey mask">
+      <svg viewBox="0 0 240 360" aria-hidden="true">
+        <defs>
+          <linearGradient id="mask" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#b7aaa0" />
+            <stop offset="1" stop-color="#625958" />
+          </linearGradient>
+        </defs>
+        <!-- Jason Voorhees: weathered hockey mask and dark work jacket -->
+        <path class="body" d="M18 360c6-67 29-104 72-122l30 21 30-21c43 18 66 55 72 122z" />
+        <path class="overall-seam" d="M91 241l29 18 29-18M120 260v100M70 278l35 15m70-15-35 15" />
+        <path class="neck" d="M96 207h48v48l-24 12-24-12z" />
+        <!-- hockey mask silhouette -->
+        <path class="face" d="M120 24c-39 0-63 26-62 69l5 89c2 43 22 69 57 69s55-26 57-69l5-89c1-43-23-69-62-69z" />
+        <!-- red triangular markings -->
+        <path class="mask-mark" d="M102 77l18-17 18 17-7 7-11-10-11 10zm-25 49 20 3-5 10-17-3zm66 3 20-3 2 10-17 3zm-23 57 13 0-13 19-13-19z" />
+        <!-- punched ventilation holes and deep eye sockets -->
+        <path class="eye" d="M73 137q17-13 38-3l-3 14q-17-6-35 4zm56-3q21-10 38 3l0 15q-18-10-35-4z" />
+        <g class="mask-holes">
+          <circle cx="82" cy="108" r="2.5"/><circle cx="98" cy="111" r="2.5"/><circle cx="142" cy="111" r="2.5"/><circle cx="158" cy="108" r="2.5"/>
+          <circle cx="87" cy="190" r="2.5"/><circle cx="103" cy="194" r="2.5"/><circle cx="120" cy="196" r="2.5"/><circle cx="137" cy="194" r="2.5"/><circle cx="153" cy="190" r="2.5"/>
+          <circle cx="105" cy="220" r="2.5"/><circle cx="120" cy="223" r="2.5"/><circle cx="135" cy="220" r="2.5"/>
+        </g>
+        <path class="mask-strap" d="M62 101L45 113m133-12 17 12" />
+        <path class="nose" d="M120 157v17" />
+        <path class="mouth" d="M95 235h50" />
+        <path class="shade" d="M62 166l13 2-3 41-7-17zm116 0-13 2 3 41 7-17z" />
+      </svg>
+    </div>
+    <div class="copy">
+      <span class="eyebrow">THE NIGHT IS QUIET</span>
+      <h1>ALL I FEEL<br><em>IS HATRED</em></h1>
+      <span class="rule"></span>
+      <p>AND IT NEVER SLEEPS</p>
+    </div>
   </main>
 </body>
 </html>
